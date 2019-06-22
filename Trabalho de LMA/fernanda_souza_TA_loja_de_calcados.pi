@@ -1,0 +1,300 @@
+/* 
+Autoria: Fernanda Maria de Souza.
+Saída:
+CPU time 1.447 seconds.
+
+Cliente 1:
+verde ana sapatilha 35 23 contadora
+Cliente 2:
+branco carolina bota 34 25 nutricionista
+Cliente 3:
+azul maria tenis 37 20 enfermeira
+Cliente 4:
+vermelho fernanda salto 38 31 advogada
+Cliente 5:
+amarelo ingrid sandalia 36 28 psiquiatra
+*/
+
+
+index(-)
+cor(amarelo).
+cor(azul).
+cor(branco).
+cor(verde).
+cor(vermelho).
+
+index(-)
+nome(maria).
+nome(ana).
+nome(fernanda).
+nome(ingrid).
+nome(carolina).
+
+index(-)
+escolheu(bota).
+escolheu(salto).
+escolheu(sandalia).
+escolheu(sapatilha).
+escolheu(tenis).
+
+index(-)
+tamanho(34).
+tamanho(35).
+tamanho(36).
+tamanho(37).
+tamanho(38).
+
+index(-)
+idade(20).
+idade(23).
+idade(25).
+idade(28).
+idade(31).
+
+index(-)
+profissao(advogada).
+profissao(contadora).
+profissao(enfermeira).
+profissao(nutricionista).
+profissao(psiquiatra).
+
+loja((C1, N1, E1, T1, I1, P1),
+        (C2, N2, E2, T2, I2, P2),
+        (C3, N3, E3, T3, I3, P3),
+        (C4, N4, E4, T4, I4, P4),
+        (C5, N5, E5, T5, I5, P5)) ?=>
+
+tamanho(T1),tamanho(T2),tamanho(T3),tamanho(T4),tamanho(T5),
+all_different([T1, T2, T3, T4, T5]),
+
+% As mulheres que calçam 34 e 35 estão lado a lado.
+
+(
+(T1==34, T2==35);
+(T2==34, T3==35);
+(T3==34, T4==35);
+(T4==34, T5==35);
+(T2==34, T1==35);
+(T3==34, T2==35);
+(T4==34, T3==35);
+(T5==34, T4==35)
+),
+
+idade(I1),idade(I2),idade(I3),idade(I4),idade(I5),
+all_different([I1, I2, I3, I4, I5]),
+
+% A mulher mais velha está exatamente à direita de quem calça 37.
+
+(
+(T1==37, I2==31);
+(T2==37, I3==31);
+(T3==37, I4==31);
+(T4==37, I5==31)
+),
+
+% A cliente mais nova está na terceira posição.
+
+I3==20,
+
+% Em uma das pontas está a mulher de 28 anos.
+
+(
+I1==28;
+I5==28
+),
+
+% A cliente de 31 anos calça 38.
+
+(
+(I1==31, T1==38);
+(I2==31, T2==38);
+(I3==31, T3==38);
+(I4==31, T4==38);
+(I5==31, T5==38)
+),
+
+escolheu(E1),escolheu(E2),escolheu(E3),escolheu(E4),escolheu(E5),
+all_different([E1, E2, E3, E4, E5]),
+
+% Na quarta posição está a mulher que escolheu o Salto.
+
+E4==salto,
+
+cor(C1),cor(C2),cor(C3),cor(C4),cor(C5),
+all_different([C1, C2, C3, C4, C5]),
+
+% Na quarta posição está quem escolheu um calçado Vermelho.
+
+C4==vermelho,
+
+% A cliente de 31 anos está exatamente à esquerda de quem escolheu um calçado Amarelo.
+
+(
+(I1==31, C2==amarelo);
+(I2==31, C3==amarelo);
+(I3==31, C4==amarelo);
+(I4==31, C5==amarelo)
+),
+
+% A cliente que escolheu um calçado Branco está exatamente à esquerda de quem escolheu um calçado Azul.
+
+(
+(C1==branco, C2==azul);
+(C2==branco, C3==azul);
+(C3==branco, C4==azul);
+(C4==branco, C5==azul)
+),
+
+profissao(P1),profissao(P2),profissao(P3),profissao(P4),profissao(P5),
+all_different([P1, P2, P3, P4, P5]),
+
+% A Advogada está exatamente à esquerda da mulher de 28 anos.
+
+(
+(P1=advogada, I2=28);
+(P2=advogada, I3=28);
+(P3=advogada, I4=28);
+(P4=advogada, I5=28)
+),
+
+nome(N1),nome(N2),nome(N3),nome(N4),nome(N5),
+all_different([N1, N2, N3, N4, N5]),
+
+% Carolina escolheu um calçado Branco.
+
+(
+(N1==carolina, C1==branco);
+(N2==carolina, C2==branco);
+(N3==carolina, C3==branco);
+(N4==carolina, C4==branco);
+(N5==carolina, C5==branco)
+),
+
+% Ana está na primeira posição.
+
+N1==ana,
+
+% Maria escolheu um Tênis.
+
+(
+(N1==maria, E1==tenis);
+(N2==maria, E2==tenis);
+(N3==maria, E3==tenis);
+(N4==maria, E4==tenis);
+(N5==maria, E5==tenis)
+),
+
+% Fernanda está em algum lugar à direita de quem escolheu um calçado Azul.
+
+(
+(C1==azul, N2==fernanda);
+(C1==azul, N3==fernanda);
+(C1==azul, N4==fernanda);
+(C1==azul, N5==fernanda);
+(C2==azul, N3==fernanda);
+(C2==azul, N4==fernanda);
+(C2==azul, N5==fernanda);
+(C3==azul, N4==fernanda);
+(C3==azul, N5==fernanda);
+(C4==azul, N5==fernanda)
+),
+
+% A cliente de 23 anos está ao lado da mulher que escolheu uma Bota.
+
+(
+(I1==23, E2==bota);
+(I2==23, E3==bota);
+(I3==23, E4==bota);
+(I4==23, E5==bota);
+(I2==23, E1==bota);
+(I3==23, E2==bota);
+(I4==23, E3==bota);
+(I5==23, E4==bota)
+),
+
+% Fernanda está em algum lugar entre a cliente de 23 anos e a Ingrid, nessa ordem.
+
+(
+(I1==23, N3==ingrid, (N2==fernanda));
+(I1==23, N4==ingrid, (N2==fernanda;N3==fernanda));
+(I1==23, N5==ingrid, (N2==fernanda;N3==fernanda;N4==fernanda));
+(I2==23, N4==ingrid, (N3==fernanda));
+(I2==23, N5==ingrid, (N3==fernanda;N4==fernanda));
+(I3==23, N5==ingrid, (N4==fernanda))
+),
+
+% A mulher de 25 anos está em algum lugar entre a mulher que calça 35 e quem escolheu um Tênis, nessa ordem.
+
+(
+(T1==35, E3==tenis, (I2==25));
+(T1==35, E4==tenis, (I2==25;I3==25));
+(T1==35, E5==tenis, (I2==25;I3==25;I4==25));
+(T2==35, E4==tenis, (I3==25));
+(T2==35, E5==tenis, (I3==25;I4==25));
+(T3==35, E5==tenis, (I4==25))
+),
+
+% A Enfermeira está em algum lugar entre quem escolheu a Sapatilha e a Psiquiatra, nessa ordem.
+
+(
+(E1==sapatilha, P3==psiquiatra, (P2==enfermeira));
+(E1==sapatilha, P4==psiquiatra, (P2==enfermeira;P3==enfermeira));
+(E1==sapatilha, P5==psiquiatra, (P2==enfermeira;P3==enfermeira;P4==enfermeira));
+(E2==sapatilha, P4==psiquiatra, (P3==enfermeira));
+(E2==sapatilha, P5==psiquiatra, (P3==enfermeira;P4==enfermeira));
+(E3==sapatilha, P5==psiquiatra, (P4==enfermeira))
+),
+
+% A Nutricionista está em algum lugar entre a cliente que calça 35 e a Enfermeira, nessa ordem.
+
+(
+(T1==35, P3==enfermeira, (P2==nutricionista));
+(T1==35, P4==enfermeira, (P2==nutricionista;P3==nutricionista));
+(T1==35, P5==enfermeira, (P2==nutricionista;P3==nutricionista;P4==nutricionista));
+(T2==35, P4==enfermeira, (P3==nutricionista));
+(T2==35, P5==enfermeira, (P3==nutricionista;P4==nutricionista));
+(T3==35, P5==enfermeira, (P4==nutricionista))
+),
+
+% Quem escolheu um calçado Azul está em algum lugar à esquerda de quem escolheu uma Sandália.
+
+(
+(C1==azul, E2==sandalia);
+(C1==azul, E3==sandalia);
+(C1==azul, E4==sandalia);
+(C1==azul, E5==sandalia);
+(C2==azul, E3==sandalia);
+(C2==azul, E4==sandalia);
+(C2==azul, E5==sandalia);
+(C3==azul, E4==sandalia);
+(C3==azul, E5==sandalia);
+(C4==azul, E5==sandalia)
+).
+
+main ?=> 
+		time(
+        loja((C1, N1, E1, T1, I1, P1),
+        (C2, N2, E2, T2, I2, P2),
+        (C3, N3, E3, T3, I3, P3),
+        (C4, N4, E4, T4, I4, P4),
+        (C5, N5, E5, T5, I5, P5))
+        ),
+
+        printf("Cliente 1:\n"),
+        printf("%w %w %w %w %w %w\n", C1, N1, E1, T1, I1, P1),
+        printf("Cliente 2:\n"),
+        printf("%w %w %w %w %w %w\n", C2, N2, E2, T2, I2, P2),
+        printf("Cliente 3:\n"),
+        printf("%w %w %w %w %w %w\n", C3, N3, E3, T3, I3, P3),
+        printf("Cliente 4:\n"),
+        printf("%w %w %w %w %w %w\n", C4, N4, E4, T4, I4, P4),
+        printf("Cliente 5:\n"),
+        printf("%w %w %w %w %w %w\n", C5, N5, E5, T5, I5, P5).
+        %,false.
+%main => true.
+
+
+
+all_different([]) ?=> true.
+	all_different([H|T]) => not(member(H,T)),
+						   all_different(T).

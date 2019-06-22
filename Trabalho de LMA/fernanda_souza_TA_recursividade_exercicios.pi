@@ -1,0 +1,150 @@
+/* 
+Autoria: Fernanda Maria de Souza. 
+Turma: A.
+
+Saida:
+%--Primeira questao:--
+%7 termo:			34 
+%8 termo:			43
+%9 termo:   		53
+%10 termo:   		64
+%11 termo:   		76
+%12 termo:   		89
+%--Segunda questao:--
+%N = 5:
+%n-esimo termo:		10
+%Seguinte:			13
+%
+%
+%N = 7:
+%N-esimo termo:     39
+%Seguinte:          43
+%
+%--Terceira questao:--
+%Soma recursiva, soma_rec(1, 6, B):     7
+%
+%--Quarta questao:--
+%e ^ 3: 20.079665178571428
+%e ^ 4: 54.443104056437384
+%
+%CPU time 0.013 seconds.
+*/
+
+
+% 1.	Encontre o n-ésimo termo da seguinte sequência recursiva: 1, 4, 8, 13, 19, 26, .... 
+
+ass_1(B, Y, 1) ?=>
+    printf("%w\n", B) .
+
+ass_1(B, Y, Z) =>
+    ass_1(B + Y, Y + 1, Z - 1) .
+
+rcsvd(N) ?=>
+    N > 0 ,
+    ass_1(1, 3, N) .
+
+% 2.	Encontre o n-ésimo termo e o seguinte (ou seja, dois termos), para sequência recursiva dada por: 2, 3, 3, 5, 10, 13, 39, .... 
+
+ass_2(B, Y, Z, A) ?=>
+    (Z == A) ,
+    printf("%w\n", B) .
+
+ass_2(B, Y, Z, A) ?=>
+    (Z mod 2 == 0) ,
+    Z > 1 ,
+    ass_2(B * Y, Y + 1, Z + 1, A) .
+
+ass_2(B, Y, Z, A) =>
+    ass_2(B + Y, Y, Z + 1, A).
+
+
+sec(N) ?=>
+    printf("N-esimo termo:\t") ,
+    ass_2(2, 1, 1, N) ,
+    printf("Seguinte:\t") ,
+    ass_2(2, 1, 1, N + 1) , nl .
+
+% 3.	Giuseppe Peano foi uma matemático que observou que os números naturais podem ser obtidos por somas recursivas, dadas por: x+0 = x e x+soma(y) =
+% soma(x + y). Traduza isto para LPO e na sequência escreva em Picat (ou Prolog) que um dado número N > 0 este pode ser provado como sendo um
+% número natural. Referência: postulados aritméticos de Peano.
+
+soma_rcsvd(B, 0, S) ?=> S = B.
+
+soma_rcsvd(B, Y, S) =>
+    soma_rcsvd(Y, 0, S1) ,
+    S = B + S1 .
+
+% 4.	Aproveitando o fatorial recursivo feito em sala, implemente a seguinte soma recursiva para n termos, dado um expoente x. 
+% Em termos práticos, se x = 1, tem-se: e1 ≈ 2.718281828459045... se n for muito grande (o que pode demorar muito no seu computador)! Outro exemplo:
+% e5 ≈ 148.4131591025766.... Então teste para n pequeno como n < 10.
+
+fat(0, S) ?=> S = 1 .
+
+fat(B, S) =>
+    B > 0 ,
+    fat(B - 1, S1) ,
+    S = S1 * B .
+
+seq(B, 0, S1, S) ?=>
+    A1 = B ** 0 ,
+    fat(0, A2) ,
+    S = (A1 / A2) + S1 .
+
+seq(B, N, S1, S) =>
+    A1 = B ** N ,
+    fat(N, A2) ,
+
+    seq(B, N - 1, S1 + (A1 / A2), S) .
+
+pow(B, S) ?=>
+    B > 0,
+    seq(B, 10, 0, S) .
+
+% Testes
+
+test =>
+
+	printf("--Primeira questao:--") , nl ,
+	
+    printf("7 termo:\t") ,
+    rcsvd(7) ,
+    printf("8 termo:\t") ,
+    rcsvd(8) ,
+    printf("9 termo:\t") ,
+    rcsvd(9) ,
+    printf("10 termo:\t") ,
+    rcsvd(10) ,
+    printf("11 termo:\t") ,
+    rcsvd(11) ,
+    printf("12 termo:\t") ,
+    rcsvd(12) ,
+
+    printf("--Segunda questao:--") , nl ,
+
+    printf("N = 5:\n") ,
+    sec(5) , nl ,
+
+    printf("N = 7:\n") ,
+    sec(7) ,
+
+	printf("--Terceira questao:--") , nl ,
+
+    printf("Soma recursiva, soma_rec(3, 8, B):\t") ,
+    soma_rcsvd(3, 8, B) ,
+    printf("%w\n", B) , nl ,
+
+	printf("--Quarta questao:--") , nl ,
+
+    printf("e ^ 3:\t") ,
+
+    pow(3, Y) ,
+    printf("%w\n", Y) ,
+
+    printf("e ^ 4:\t") ,
+    
+    pow(4, Z) ,
+    printf("%w\n", Z) .
+
+main =>
+    time(test()) .
+
