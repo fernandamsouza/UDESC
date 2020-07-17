@@ -1,0 +1,54 @@
+RF01 - Efetuar cancelamentos de reservas.
+Descrição: O cancelamento de reservas será feito no console, que permitirá a determinado usuário(Gerente ou Funcionário) do sistema retirar uma reserva da base de dados. Para tal, o usuário deverá digitar:
+- Código da reserva: O código da reserva deve possuir denominação de texto simples "Código da Reserva", além de um campo para o usuário informar o código da reserva a ser cadastrada. Os códigos de reserva são aleatórios em tamanhos aleatórios. Exemplos de códigos válidos: 1004, 120, 0001.
+
+RF02 - Efetuar reservas de quartos.
+Descrição: A efetuação de reservas será feito no console, que permitirá a determinado usuário do sistema cadastrar reservas de quartos na base de dados. Para tal, o usuário deverá digitar: 
+- Código de Cadastro do Cliente: O código de cadastro do cliente deve possuir uma denominação de texto simples "Código de Cadastro do Cliente", além de um campo para o usuário informar o respectivo código. O código de cadastro do cliente é um número aleatório em um tamanho aleatório. Exemplos de código: 0005, 50, 29, 290.
+
+RF03 - Consulta de disponibilidade de quartos.
+Descrição: A consulta de disponibilidade de quartos será feito no console, que permitirá a determinado usuário do sistema realizar a consulta na base de dados do Hotel. Para tal, o usuário deverá digitar:
+- Código do quarto: O código do quarto a ser consultado deve possuir uma denominação de texto simples "Código do quarto", além de um campo para o usuário informar o respectivo código. O código do quarto é um número aleatório em um tamanho aleatório gerado após a efetuação de reserva de quartos. Exemplo: 001, 002, 003, 004.
+
+RF04 - Consulta de informações a respeito dos funcionários.
+Descrição: A consulta de informações a respeito dos funcionários será feita no console, que permitirá ao Gerente realizar a consulta na base de dados do Hotel. Para tal, o Gerente deverá digitar:
+- ID: A ID (Identificação) de cada funcionário do hotel deve possuir uma denominação de texto simples "Numero de ID", além de um campo para o usuário informar o respectivo código. A ID é um número aleatório gerado após o cadastro dos funcionários no sistema. Exemplo de IDs válidas: 003, 002, 001, 101. 
+
+RF05 - Cadastro de funcionários que trabalham no Hotel.
+Descrição: O cadastro de funcionários será feito no console, que permitirá ao Gerente cadastrar funcionários na base de dados. Para tal, o Gerente deverá digitar:
+- Nome: O Nome deve possuir uma denominação de texto simples "Nome do Funcionário", além de um campo para o Gerente informar a respectiva string. Exemplos: Daniella Vasconcellos, Fernanda Maria de Souza, Matias Giuliano Gutierrez, Vinicius Takeo.
+- RG:  O RG deve possuir uma denominação de texto simples "RG", além de um campo para o Gerente informar os respectivos números. Exemplos de RGs válidos: 3289231, 9819293010, 1133255666.
+- CPF: O CPF deve possuir uma denominação de texto simples "CPF", além de um campo para o Gerente informar os respectivos números. Exemplos de CPFs válidos: 48922284756, 55524786521, 10235684762.
+- Idade: A idade de cada funcionário deve possuir uma denominação de texto simples "Idade", além de um campo para o Gerente informar o respectivo número. Exemplos de Idades válidas: 48, 56, 27.
+- Cargo: O Cargo de cada funcionário deve possuir uma denominação de texto simples "Cargo", além de um campo para o Gerente informar a respectiva string. Exemplos: Gerente, Atendente, Faxineiro, Cozinheiro, Manutenção, Segurança.
+- Número de telefone: O número de telefone a ser cadastrado deve possuir uma denominação de texto simples "Número de Telefone", além de um campo para o Gerente informar o respectivo código. Exemplos de números de telefone válidos: 991373725, 991484890,988719087.
+- Nome de Usuário: O nome de usuário a ser cadastrado deve possuir uma denominação de texto simples "Usuário", além de um campo para o Gerente informar a respectiva string de nome de usuário para o Funcionário. 
+- Senha: A senha a ser cadastrada deve possuir uma denominação de texto simples "Senha", além de um campo para o Gerente informar a respectiva string de senha para o Funcionário.
+
+RF06 - Cadastro da infraestrutura dos quartos (Mobília).
+Descrição: O cadastro da infraestrutura dos quartos será feita no console, que permitirá ao Gerente cadastrar a infraestrutura dos quartos na base de dados. Para tal, o Gerente deverá digitar:
+- Código do quarto: O código do quarto a ser cadastrado deve possuir uma denominação de texto simples "Código do quarto", além de um campo para o usuário informar o respectivo código. O código do quarto é um número aleatório em um tamanho aleatório gerado após a efetuação de reserva de quartos. Exemplo: 001, 002, 003, 004.
+- Número de Camas de Casal: Deve possuir uma denominação de texto simples "Número de Camas de Casal", além de um campo para o Gerente informar o respectivo inteiro. Exemplos: 1, 2, 3.
+- Números de Camas de solteiro: Deve possuir uma denominação de texto simples "Número de Camas de Solteiro", além de um campo para o Gerente informar o respectivo inteiro. Exemplos: 1, 2, 3.
+- Existência de Ar condicionado: Deve possuir uma denominação de texto simples "Existência de Ar condicionado", além de um campo para o Gerente informar o respectivo boolean. Exemplos: SIM, NÃO.
+- Existência de frigobar: Deve possuir uma denominação de texto simples "Existência de frigobar", além de um campo para o Gerente informar o respectivo boolean. Exemplos: SIM, NÃO.
+- Existência de TV: Deve possuir uma denominação de texto simples "Existência de TV", além de um campo para o Gerente informar o respectivo boolean. Exemplos: SIM, NÃO.
+- Existência de cofre: Deve possuir uma denominação de texto simples "Existência de cofre", além de um campo para o Gerente informar o respectivo boolean. Exemplos: SIM, NÃO.
+- Existência de banheira: Deve possuir uma denominação de texto simples "Existência de banheira", além de um campo para o Gerente informar o respectivo boolean. Exemplos: SIM, NÃO.
+
+RF07 - Cadastro de Clientes que irão frequentar o Hotel.
+Descrição: O cadastro de clientes que irão frequentar o hotel será feito no console, que permitirá ao usuário cadastrar clientes na base de dados. Para tal, o usuário deverá digitar:
+- Nome: O Nome deve possuir uma denominação de texto simples "Nome", além de um campo para o usuário informar a respectiva string. Exemplos: Daniella Vasconcellos, Fernanda Maria de Souza, Matias Giuliano Gutierrez, Vinicius Takeo.
+- Idade: A idade de cada cliente deve possuir uma denominação de texto simples "Idade", além de um campo para o usuário informar o respectivo número. Exemplos de Idades válidas: 48, 56, 27. 
+- RG: O RG deve possuir uma denominação de texto simples "RG", além de um campo para o usuário informar os respectivos números. Exemplos de RGs válidos: 3289231, 9819293010, 1133255666.
+- CPF: O CPF deve possuir uma denominação de texto simples "CPF", além de um campo para o usuário informar os respectivos números. Exemplos de CPFs válidos: 48922284756, 55524786521, 10235684762.
+- Número de telefone: O número de telefone a ser cadastrado deve possuir uma denominação de texto simples "Número de Telefone", além de um campo para o usuário informar o respectivo código. Exemplos de números de telefone válidos: 991373725, 991484890,988719087.
+
+RF08 - Consulta de infraestrutura
+Descrição: A consulta de infraestrutura será feita no console, que permitirá ao Gerente consultar na base de dados. Para tal, o Gerente deverá digitar:
+- Código do quarto: O código do quarto a ser consultado deve possuir uma denominação de texto simples "Código do quarto", além de um campo para o usuário informar o respectivo código. O código do quarto é um número aleatório em um tamanho aleatório gerado após a efetuação de reserva de quartos. Exemplo: 001, 002, 003, 004.
+
+RF09 - Consulta de clientes
+Descrição: A consulta de clientes será feita no console, que permitirá ao usuário consultar na base de dados. Para tal, o usuário deverá digitar:
+- CPF: O CPF deve possuir uma denominação de texto simples "CPF", além de um campo para o usuário informar os respectivos números. Exemplos de CPFs válidos: 48922284756, 55524786521, 10235684762.
+- Código de Cadastro do Cliente: O código de cadastro do cliente deve possuir uma denominação de texto simples "Código de Cadastro do Cliente", além de um campo para o usuário informar o respectivo código. O código de cadastro do cliente é um número aleatório em um tamanho aleatório. Exemplos de código: 0005, 50, 29, 290.

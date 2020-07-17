@@ -1,0 +1,116 @@
+NOME: Efetuar cancelamentos de reservas. 
+DESCRIÇÃO: Este caso de uso permite o cancelamento de reservas. Tanto o gerente como o atendente podem efetuar o cancelamento de reservas.
+PRÉ-CONDIÇÕES: Para efetuar o mesmo deve estar logado no sistema e a reserva já cadastrada.
+PÓS-CONDIÇÕES: Após o cancelamento ser efetuado, o sistema informará em caso de sucesso que o mesmo foi realizado com sucesso.
+
+FLUXO NORMAL:
+1 - O sistema irá exibir as reservas existentes.
+2 - O gerente após selecionar a opção de realizar o cancelamento de uma reserva irá selecionar a desejada para remoção.
+3 - O sistema realizará a retirada da reserva.
+
+FLUXO ALTERNATIVO:
+Condição 1: O Ator tenta remover uma reserva não existente.
+1 - Ao tentar remover uma reserva do sistema, o Ator recebe um alerta informando a inexistência do cadastro.
+2 - Após ser fechado o alerta, o sistema exibirá de novo as reservas existentes seguindo para o fluxo normal.
+
+NOME: Efetuar reservas de quartos.
+DESCRIÇÃO: Este caso de uso permite a reserva de quartos no Hotel. Tanto o gerente como o atendente podem efetuar a reserva de quartos.
+PRÉ-CONDIÇÕES: Para efetuar o serviço, o Ator deve estar logado no sistema e o Cliente previamente cadastrado no sistema.
+PÓS-CONDIÇÕES: Caso todas as informações de reserva do cliente estiverem corretas, o cadastro da reserva é realizado no sistema.
+
+FLUXO NORMAL:
+1 - O sistema irá exibir as reservas existentes.
+1 - O Ator digita o código de cadastro do Cliente previamente gerado no Cadastro de clientes.
+2 - Com o Ator preenchendo os dados necessários, o cadastro é realizado.
+
+FLUXO ALTERNATIVO:
+Condição 1: O Ator não tem um cadastro necessário para a reserva.
+1 - Ao tentar confirmar o cadastro, o sistema informará que o cadastro não consta no sistema. 
+2 - Após informar o erro, o sistema chamará a função novamente.
+
+NOME: Consulta de disponibilidade de quartos.
+DESCRIÇÃO: Este caso de uso permite ao Ator consultar se determinado quarto está disponível ou não para reserva.
+PRÉ-CONDIÇÕES: Para efetuar o serviço, o Ator deve estar logado no sistema.
+PÓS-CONDIÇÕES: Caso o código do quarto informado pelo Ator estiver correto, o sistema exibirá a situação do mesmo (Disponível/Indisponível).
+
+FLUXO NORMAL:
+1 - O Ator digita o código do quarto a ser consultado.
+2 - O sitema retorna se o quarto está disponível ou indisponível para reserva.
+
+NOME: Consulta de informações a respeito dos funcionários.
+DESCRIÇÃO: Este caso de uso permite ao Gerente consultar informações relacionadas aos funcionários (Nome, CPF, Idade e Cargo).
+PRÉ-CONDIÇÕES: O gerente deve estar logado no sistema e o funcionário previamente cadastrado.
+PÓS-CONDIÇÕES: Caso o ID do funcionário tenha sido digitado corretamente pelo gerente, as informações a respeito do funcionário é exibida no console.
+
+FLUXO NORMAL:
+1 - O sistema exibirá após o gerente escolher a opção "Consulta de informações de funcionários" a lista de funcionários do hotel.
+2 - O gerente deve digitar a ID do funcionário a ser consultado e o sistema exibirá as informações do mesmo.
+
+FLUXO ALTERNATIVO:
+Condição 1: O Gerente digita a ID de um funcionário que não consta no sistema.
+1 - Após digitar o número da ID inexistente, o sistema retornará que o mesmo não existe.
+
+NOME: Cadastro de funcionários que trabalham no Hotel.
+DESCRIÇÃO: Este caso de uso permite ao Gerente cadastrar funcionários que trabalham no Hotel com os dados do mesmo (Nome, CPF, RG, Idade, Cargo, Número de telefone, Nome de Usuário e Senha).
+PRÉ-CONDIÇÕES: O gerente deve estar logado no sistema.
+PÓS-CONDIÇÕES: O funcionário é cadastrado no sistema.
+
+FLUXO NORMAL:
+1 - Após selecionar a opção no console de "Cadastro de funcionários", o sistema exibirá quais dados são necessários para efetuar o cadastro.
+2 - Com as informações devidamente preenchidas, o cadastro do funcionário é concluído.
+
+FLUXO ALTERNATIVO:
+Condição 1: O Gerente tenta cadastrar um novo funcionário cujo código de funcionário já consta no sistema.
+1 - O sistema irá alertar que já foi gerado um código igual e irá encerrar o cadastro, voltando para o menu inicial.
+
+NOME: Cadastro da infraestrutura dos quartos (Mobília).
+DESCRIÇÃO: Este caso de uso permite ao Gerente cadastrar a infraestrutura dos quartos, ou seja, sua mobília. 
+PRÉ-CONDIÇÕES: O Gerente deve estar logado no sistema. 
+PÓS-CONDIÇÕES: As mobílias são cadastradas no quarto respectivo ao código do quarto digitado pelo usuário.
+
+FLUXO NORMAL:
+1 - Após selecionar a opção no console de "Cadastro da infraestrutura dos quartos", o sistema exibirá todos os quartos e pedirá para o usuário o código do quarto a ser cadastrado.
+2 - Com a infraestrutura determinada, os móveis e do quarto são cadastrados no sistema.
+
+FLUXO ALTERNATIVO:
+Condição 1: O Gerente tenta cadastrar a mobília de um código de quarto que não consta na lista dos existentes.
+1 - Após digitar o código do quarto inexistente, o sistema retornará que o mesmo não consta no sistema.
+
+NOME: Cadastro de Clientes que irão frequentar o Hotel
+DESCRIÇÃO: Este caso de uso permite ao Ator o cadastro de clientes que irão frequentar o Hotel com os dados (Nome, Idade, RG, CPF e Número de Telefone).
+PRÉ-CONDIÇÕES: O Ator deve estar logado no sistema.
+PÓS-CONDIÇÕES: O cliente é cadastrado no sistema do Hotel.
+
+FLUXO NORMAL:
+1 - Após selecionar a opção no console de "Cadastro de Clientes", o sistema exibirá os dados necessários para o cadastro.
+2 - Com os dados preenchidos, o cadastro é concluído.
+
+FLUXO ALTERNATIVO:
+Condição 1: O Cliente já possui cadastro existente no sistema.
+1 - O sistema irá alertar que o CPF Já foi cadastrado e irá encerrar o cadastro, voltando para o menu inicial.
+
+NOME: Consulta de infraestrutura 
+DESCRIÇÃO: Este caso de uso permite ao Gerente consultar a infraestrutura de cada quarto.
+PRÉ-CONDIÇÕES: O gerente deve estar logado no sistema e a mobília previamente cadastrada.
+PÓS-CONDIÇÕES: Caso o código do quarto tenha sido digitado corretamente pelo gerente, as informações a respeito da infraestrutura do quarto são exibidas.
+
+FLUXO NORMAL:
+1 - Após selecionar a opção no console de "Consulta de Infraestrutura", o sistema pedirá o código do quarto a ser consultado.
+2 - Com o código digitado, as informações do quarto são mostradas para o usuário.
+
+FLUXO ALTERNATIVO:
+Condição 1: O código do quarto digitado pelo Gerente não existe.
+1 - O sistema irá alertar que o código do quarto não consta no sistema, voltando para o menu inicial.
+
+NOME: Consulta de clientes 
+DESCRIÇÃO: Este caso de uso permite ao usuário consultar clientes no sistema.
+PRÉ-CONDIÇÕES: O usuário deve estar logado no sistema e o cliente previamente cadastrado.
+PÓS-CONDIÇÕES: Caso o CPF do cliente seja digitado corretamente, as informações do mesmo serão mostradas na tela: Nome, Idade, RG, CPF e Número de Telefone.
+
+FLUXO NORMAL:
+1 - Após selecionar a opção no console de "Consulta de clientes", o sistema pedirá o CPF a ser consultado e o código do cliente.
+2 - Com o CPF digitado, as informações do cliente são mostradas para o usuário.
+
+FLUXO ALTERNATIVO:
+Condição 1: O CPF digitado pelo usuário não existe.
+1 - O sistema irá alertar que o CPF não consta no sistema, ou seja, o cadastro do cliente não foi realizado, retornando para o menu inicial.

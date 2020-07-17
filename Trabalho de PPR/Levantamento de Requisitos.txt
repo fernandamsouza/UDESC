@@ -1,0 +1,17 @@
+- Requisito 001: O sistema deve permitir o cadastro dos clientes que irão frequentar o hotel.
+
+- Requisito 002: O sistema deve permitir o cadastro da infraestrutura e mobília dos quartos.
+
+- Requisito 003: O sistema deve permitir o cadastro de funcionários que trabalham no hotel.
+
+- Requisito 004: O sistema deve permitir a consulta das informações a respeito dos funcionários.
+
+- Requisito 005: O sistema deve permitir a consulta da disponibilidade dos quartos.
+
+- Requisito 006: O sistema deve permitir a possibilidade de efetuar reserva de quartos.
+
+- Requisito 007: O sistema deve permitir o cancelamento de uma reserva.
+
+- Requisito 008: O sistema deve permitir a consulta da infraestrutura dos quartos.
+
+- Requisito 009: O sistema deve permitir a consulta das informações a respeito dos clientes.
