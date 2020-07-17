@@ -1,0 +1,35 @@
+
+FERNANDA MARIA de SOUZA E MATIAS GIULIANO GUTIERREZ BENITEZ
+
+O código foi feito e compilado no IDE ECLIPSE na linguagem JAVA.
+
+A função main esta no:
+	view.main
+
+Não precisa de bibliotecas extras.
+
+Para compilar desde o terminal:
+	Desde Linux: javac AutomatoFinitoDeterministico.java Brzozowski.java Controle.java Estado.java Linguagem.java Simbolo.java View.java
+
+	Desde Windows: javac AutomatoFinitoDeterministico.java Brzozowski.java Controle.java Estado.java Linguagem.java Simbolo.java View.java
+
+EXEMPLO 1 : 
+
+0 1
+a b
+a
+a
+a 0 b
+a 1 a
+b 0 a
+b 1 b
+
+
+
+
+
+
+
+
+
+
